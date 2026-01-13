@@ -20,9 +20,8 @@ Frontend: Next.js, React, JavaScript, CSS
 
 Backend: NestJS, Node.js, TypeScript
 
-Database: (Specify your DB here, e.g., PostgreSQL)
+Database: PostgreSQL
 
-Tools: ESLint, Prettier for code formatting
 
 Project Structure
 RentNGo/
@@ -31,39 +30,32 @@ RentNGo/
 ├── .gitignore
 └── README.md
 
+
 Installation & Running Locally
 
 Backend
-
 Open terminal and navigate to backend:
-
 cd backend
 
 
 Install dependencies:
-
 npm install
 
 
 Run backend server:
-
 npm run start:dev
 
 
 Frontend
-
 Open terminal and navigate to frontend:
-
 cd car_rental
 
 
 Install dependencies:
-
 npm install
 
 
 Run frontend server:
-
 npm run dev
 
 
