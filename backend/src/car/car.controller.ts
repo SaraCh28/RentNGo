@@ -1,0 +1,44 @@
+import { Controller } from '@nestjs/common';
+import { Get } from '@nestjs/common';
+import { Post } from '@nestjs/common';
+import { Patch } from '@nestjs/common';
+import { Delete } from '@nestjs/common';
+import { Body } from '@nestjs/common';
+import { Param } from '@nestjs/common';
+
+import { CarService } from './car.service';
+// Fix DTO imports
+import { CreateCarDto } from '../dto/create-car.dto';
+import { UpdateCarDto } from '../dto/update-car.dto';
+
+// Fix entity import
+
+@Controller('cars')
+export class CarController {
+  constructor(private readonly carService: CarService) {}
+
+  @Post()
+  create(@Body() createCarDto: CreateCarDto) {
+    return this.carService.create(createCarDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.carService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.carService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateCarDto: UpdateCarDto) {
+    return this.carService.update(+id, updateCarDto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.carService.remove(+id);
+  }
+}
